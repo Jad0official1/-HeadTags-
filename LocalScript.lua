@@ -6,7 +6,8 @@ local cam = workspace.CurrentCamera
 local Events = RS:WaitForChild("Events")
 local event = Events:WaitForChild("SendDeviceEvent")
 
-print:("👑 Runing Head Tags v5.0.6 by @Jad_official1)
+print("👑 Runing Head Tags v5.0.6 by @Jad_official1")
+
 local function glyph(cp)
     local inv = TS:GetTextSize(utf8.char(0xFFFF), 16, Enum.Font.SourceSans, Vector2.new(1000, 1000))
     local char = TS:GetTextSize(utf8.char(cp), 16, Enum.Font.SourceSans, Vector2.new(1000, 1000))
@@ -27,14 +28,9 @@ local function get()
     end
 
     if mobile then
-        if not UIS.TouchEnabled then return "🐧 (Linux)" end
+        if not UIS.TouchEnabled then return "💻 (Linux)" end
         if glyph(0xF8FF) then return "📱 (iOS)" end
-        local size = cam.ViewportSize
-        if math.min(size.X, size.Y) >= 600 then
-            return "📠 (Android Tablet)"
-        else
-            return "📱 (Android)"
-        end
+        return "📱 (Android)"
     end
 
     if pc then
@@ -51,4 +47,3 @@ end
 
 game.Players.LocalPlayer.CharacterAdded:Connect(send)
 send()
-
